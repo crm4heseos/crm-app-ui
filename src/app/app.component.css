@@ -1,0 +1,21 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .toolbar-conf{
+    background: #000 !important;
+}
+.wrapper .logo{
+    height: 56px;
+    width: 160px;
+}
+
+.wrapper .toolbar-conf .dashboardIcon{
+    right: 25px;
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}

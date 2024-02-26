@@ -1,0 +1,67 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box" style="width: 60%;max-width: 80%;">
+        <mat-card-header style="padding: 0;">
+            <mat-card-title class="header-text align-header">{{heading}}
+                <img class="logo" src="./assets/logo-white.webp" alt="logo">
+            </mat-card-title>
+        </mat-card-header>
+        <form class="example-form" [formGroup]="userDetailsForm" autocomplete="off">
+            <mat-card-content style="display: flex; flex-direction: row;">
+                <div class="column1" style="width: 50%;">
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Username" formControlName="userName" name="userName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Email" formControlName="email" name="email">
+                    </mat-form-field>
+                    <ng-container *ngIf="partner">
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Password" formControlName="password" name="password">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" name="confirmPassword">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose a role...</mat-label>
+                        <mat-select formControlName="userRole" name="userRole">
+                            <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </ng-container>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Phone Number" formControlName="phoneNumber" name="phoneNumber">
+                    </mat-form-field>
+                </div>
+                <div class="column2" style="display: flex;flex-direction: column;align-items: flex-end;width: 50%;">
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Country" formControlName="country">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose a State</mat-label>
+                        <mat-select formControlName="state">
+                            <mat-option [value]="state" *ngFor="let state of stateList">{{state}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="City" formControlName="city">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Pincode" formControlName="pincode">
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block" style="width: 250px;
+            position: relative;
+            margin: 0 auto;
+            display: block;" (click)="handleRegisterForm()">Register</button>
+        </form>
+    </mat-card>
+</div>

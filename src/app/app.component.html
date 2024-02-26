@@ -1,0 +1,9 @@
+<div class="wrapper" *ngIf="service.userRole">
+    <div>
+        <mat-toolbar class="toolbar-conf">
+            <img class="logo" src="./assets/logo-white.webp" alt="logo">
+            <mat-icon class="dashboardIcon" (click)="redirectToPage('dashboard')">dashboard</mat-icon>
+        </mat-toolbar>
+    </div>
+</div>
+<router-outlet />
