@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>Assign Lead</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Name : <strong>{{data.name}}, {{data.city}} </strong></h3>
+
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Select Role to assign</ng-template>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a role...</mat-label>
+                    <mat-select formControlName="firstCtrl" name="userRole">
+                        <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Select a partner</ng-template>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a partner...</mat-label>
+                    <mat-select formControlName="secondCtrl" name="partner">
+                        <mat-option [value]="partner" *ngFor="let partner of partnerDetails">{{partner}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are just one click away.</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="handleAssign()">Assign</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -21,11 +21,15 @@ import { AppRoutesModule } from "./app.routes";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
-import { ChannelPartnerComponent } from "./channer-partner/channel-partner.component";
+import { ChannelPartnerComponent } from "./channel-partner/channel-partner.component";
 import { AssignLeadsComponent } from "./assign-leads/assign-leads.component";
 import { AddNewCustomerComponent } from "./add-new-customer/add-new-customer.component";
 import { AddNewLeadsComponent } from "./add-new-leads/add-new-leads.component";
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogAssign } from "./entry-components/assign-dialog-component";
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from "@angular/material/sort";
 // export const appConfig: ApplicationConfig = {
 //   providers: [provideRouter(routes),
 //     provideAnimations()]
@@ -41,7 +45,8 @@ import { AddNewLeadsComponent } from "./add-new-leads/add-new-leads.component";
     ChannelPartnerComponent,
     AssignLeadsComponent,
     AddNewCustomerComponent,
-    AddNewLeadsComponent
+    AddNewLeadsComponent,
+    DialogAssign
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,6 +57,7 @@ import { AddNewLeadsComponent } from "./add-new-leads/add-new-leads.component";
     MatButtonModule,
     MatInputModule,
     MatTableModule,
+    MatDialogModule,
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
@@ -60,7 +66,9 @@ import { AddNewLeadsComponent } from "./add-new-leads/add-new-leads.component";
     AppRoutesModule,
     MatIconModule,
     MatToolbarModule,
-    CommonModule
+    MatStepperModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],

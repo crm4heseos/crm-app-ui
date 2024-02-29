@@ -2,18 +2,8 @@
     <div class="dashboard">
         <mat-card *ngFor="let dashboardContent of dashboard" class="menuBox"
             (click)="redirectToPage(dashboardContent);">
-            <mat-card-title *ngIf="dashboardContent.id === 1"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">account_box</mat-icon></mat-card-title>
-            <mat-card-title *ngIf="dashboardContent.id === 2"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">pageview</mat-icon></mat-card-title>
-            <mat-card-title *ngIf="dashboardContent.id === 3"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">assignment_turned_in</mat-icon></mat-card-title>
-            <mat-card-title *ngIf="dashboardContent.id === 4"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">playlist_add</mat-icon></mat-card-title>
-            <mat-card-title *ngIf="dashboardContent.id === 5"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">add_location</mat-icon></mat-card-title>
-            <mat-card-title *ngIf="dashboardContent.id === 0"><mat-icon fontSet="material-icons"
-                    class="dashboardIcons">exit_to_app</mat-icon></mat-card-title>
+            <mat-card-title><mat-icon fontSet="material-icons"
+                    class="dashboardIcons">{{dashboardContent.icon}}</mat-icon></mat-card-title>
             <mat-card-content>{{dashboardContent.name}}</mat-card-content>
         </mat-card>
     </div>

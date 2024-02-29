@@ -3,7 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactPartnerRegisterComponent } from './contact-partner-register/contact-partner-register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
-import { ChannelPartnerComponent } from './channer-partner/channel-partner.component';
+import { ChannelPartnerComponent } from './channel-partner/channel-partner.component';
 import { AssignLeadsComponent } from './assign-leads/assign-leads.component';
 import { AddNewLeadsComponent } from './add-new-leads/add-new-leads.component';
 import { AddNewCustomerComponent } from './add-new-customer/add-new-customer.component';

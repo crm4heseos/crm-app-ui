@@ -1,0 +1,57 @@
+<mat-card class="wrapper-table">
+    <mat-cad-title>
+        <h3 style="text-align: center;">{{heading}}</h3>
+    </mat-cad-title>
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+            class="mat-elevation-z8">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by No."> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name"> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- phoneNumber Column -->
+            <ng-container matColumnDef="phoneNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Contact"> Contact </th>
+                <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Location"> Location </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Details"> Details </th>
+                <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="assigned">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Assigned"> Assigned </th>
+                <td mat-cell *matCellDef="let element"> {{element.assigned}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element"> <button mat-stroked-button color="accent" class="btn-block"
+                        style="width: 150px" (click)="handleAssign(element)" *ngIf="!element.assigned">Assign</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+        </mat-paginator>
+    </mat-card-content>
+</mat-card>
